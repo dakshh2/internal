@@ -18,7 +18,7 @@
 
     h1 {
       color: navy;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .todo-container {
@@ -97,7 +97,7 @@
       }
 
       const li = document.createElement("li");
-      li.innerHTML = `${taskText} <span onclick="deleteTask(this)">×</span>`;
+      li.innerHTML = `${taskText} <span onclick="deleteTask(this)">Ã—</span>`;
       document.getElementById("taskList").appendChild(li);
       input.value = "";
     }

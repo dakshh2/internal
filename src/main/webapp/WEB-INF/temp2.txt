@@ -1,0 +1,12 @@
+minikube
+
+1) kubectl create deployment rishi --image=rishikanishka/image2
+2) kubectl get deployments
+3) kubectl expose deployment rishi --type=NodePort --port=8080 --target-port=8080
+4) kubectl get services
+5) kubectl port-forward svc/rishi 5000:8080
+
+(page will open localhost 5000)
+
+6) kubectl scale deployment rishi --replicas=3
+7) kubectl get deployments

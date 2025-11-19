@@ -10,3 +10,47 @@ minikube
 
 6) kubectl scale deployment rishi --replicas=3
 7) kubectl get deployments
+
+
+
+
+# 1. Create deployment
+kubectl create deployment daksh3 --image=nginx
+
+# 2. Check deployments
+kubectl get deployments
+
+# 3. Expose the service
+kubectl expose deployment daksh3 --type=NodePort --port=80 --target-port=80
+
+# 4. Check services
+kubectl get services
+
+# 5. Port forward to access locally
+kubectl port-forward svc/daksh3 5000:80
+
+# 6. Scale to 3 replicas (run this in a new terminal after port-forward is running)
+kubectl scale deployment daksh3 --replicas=3
+
+# 7. Check deployments again
+kubectl get deployments
+
+
+kubectl delete deployment daksh daksh1 daksh2 rishi rishi1
+kubectl delete service daksh daksh1 daksh2 rishi rishi1
+
+
+
+# Navigate to your directory
+cd C:\WINDOWS\system32\internal
+
+# 6. Scale to 3 replicas
+kubectl scale deployment daksh3 --replicas=3
+
+# 7. Check deployments
+kubectl get deployments
+
+# 8. Check all pods to see 3 replicas running
+kubectl get pods
+
+

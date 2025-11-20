@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    tools {
+        maven 'MAVEN_HOME'
+    }
+    stages {
+        stage('Clone & Clean') {
+            steps {
+                // bat 'rmdir /s /q internalmaven'
+                bat 'git clone https://github.com/bhavagna06/internalmaven.git'
+                bat 'mvn clean -f internalmaven'
+            }
+        }
+        stage('install') {
+            steps {
+                bat 'mvn install -f internalmaven'
+            }
+        }
+        stage('Test') {
+            steps {
+                bat 'mvn test -f internalmaven'
+            }
+        }
+        stage('Package') {
+            steps {
+                bat 'mvn package -f internalmaven'
+            }
+        }
+    }
+}

@@ -10,3 +10,7 @@ cd Internal(CLONED FOLDER NAME)
 sudo docker build -t image .
 sudo docker run -d -p 3000:8080 image
 edit inbound rules in security group
+
+
+
+docker run -d --name nagiosrishi -p 3000:80 jasonrivers/nagios
